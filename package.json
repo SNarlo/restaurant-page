@@ -1,0 +1,23 @@
+{
+  "name": "restaurant-page",
+  "version": "1.0.0",
+  "description": "A restaurant page",
+  "private":true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SNarlo/restaurant-page.git"
+  },
+  "author": "Sebastian Narloch",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SNarlo/restaurant-page/issues"
+  },
+  "homepage": "https://github.com/SNarlo/restaurant-page#readme",
+  "devDependencies": {
+    "webpack": "^5.12.1",
+    "webpack-cli": "^4.3.1"
+  }
+}
