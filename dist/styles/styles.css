@@ -1,0 +1,78 @@
+@font-face {
+    font-family: neue-headers;
+    src: url(../fonts/NeueMontreal-Italic.otf)
+}
+
+@font-face {
+    font-family: neue-body;
+    src: url(../fonts/NeueMontreal-Light.otf)
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+#header {
+    font-family: neue-headers;
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 120px;
+    width: 100%;
+    background-color: black;
+}
+
+.tabs {
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    height: inherit;
+    width: 30%;
+    right: 5%;
+    top: 0;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+.tabs label {
+    order: 1; 
+    display: flex;
+    top: 0;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    margin-right: 0.5em;
+    height: 60px;
+	cursor: pointer;
+    background: white;
+    color: black;
+    transition: background ease 0.2s;
+}
+
+.tabs .tab {
+    order: 99; 
+    flex-grow: 1;
+    width: 100%;
+    display: none;
+    padding: 1rem;
+    background: #fff;
+  }
+
+.tabs input[type="radio"] {
+	display: none;
+}
+
+body {
+    min-height: 100vh;
+    box-sizing: border-box;
+    padding-top: 10vh;
+    font-family: "neue-body";
+    font-weight: 300;
+    line-height: 1.5;
+    max-width: 60rem;
+    margin: 0 auto;
+    font-size: 112%;
+  }

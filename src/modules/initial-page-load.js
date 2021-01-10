@@ -1,0 +1,96 @@
+function createHeader(id) {
+    const header = document.createElement('header');
+    header.setAttribute('id', id);
+
+    const logo = document.createElement('img');
+    logo.setAttribute('id', 'logo');
+    header.appendChild(logo);
+    
+    return header;
+}
+
+
+function createNavRadio(id, text) {
+    // indput
+    const tab = document.createElement('input');
+    tab.type = 'radio';
+    tab.checked = true;
+    tab.name = 'tabs';
+    tab.setAttribute('id', id);
+    tab.textContent = text;
+    return tab;
+}
+
+function createLabel(id, text) {
+     const label = document.createElement('label');
+     label.setAttribute('for', id);
+     label.innerText = text;
+     return label;
+}
+
+function createMenuScreens(className, id) {
+    menuDiv = document.createElement('div');
+    menuDiv.setAttribute('id', id);
+    menuDiv.classList.add(className);
+    return menuDiv;
+}
+
+function createNavAndMenus(className) {
+    const nav = document.createElement('div');
+    nav.setAttribute('class', className)
+
+    const homeLink = createNavRadio('home', 'Home');
+    const menuLink = createNavRadio('menu', 'Menu');
+    const contactUsLink = createNavRadio('contact-us', 'Contact Us');
+
+    const homeLabel = createLabel('home', 'Home');
+    const menuLabel = createLabel('menu', 'Menu');
+    const contactUsLabel = createLabel('contact-us', 'Contact Us');
+
+    const homeMenu = createMenuScreens('tab', 'homeMenu')
+    const menuMenu = createMenuScreens('tab', 'menuMenu')
+    const contactUsMenu = createMenuScreens('tab', 'contactUsMenu')
+
+    nav.appendChild(homeLink);
+    nav.appendChild(homeLabel);
+    nav.appendChild(homeMenu);
+
+    nav.appendChild(menuLink);
+    nav.appendChild(menuLabel);
+    nav.appendChild(menuMenu);
+
+    nav.appendChild(contactUsLink);
+    nav.appendChild(contactUsLabel);
+    nav.appendChild(contactUsMenu);
+
+    return nav;
+}
+
+function createMain(id) {
+    const main = document.createElement('main');
+    main.setAttribute('id', id);
+    return main;
+}
+
+function createFooter(id) {
+    const footer = document.createElement('footer');
+    footer.setAttribute('id', id);
+    return footer;
+}
+
+function pageLoad() {
+    const content = document.querySelector('.content')
+    //header & nav
+    const header = createHeader('header');
+    const navBar = createNavAndMenus('tabs');
+    header.appendChild(navBar);
+    content.appendChild(header);
+    //main
+    const main = createMain('main');
+    content.appendChild(main);
+    //footer
+    const footer = createFooter('footer');
+    content.appendChild(footer);
+}
+
+export default pageLoad;
