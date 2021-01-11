@@ -11,7 +11,7 @@ function createHeader(id) {
 
 
 function createNavRadio(id, text) {
-    // indput
+    // input
     const tab = document.createElement('input');
     tab.type = 'radio';
     tab.checked = true;
@@ -28,10 +28,13 @@ function createLabel(id, text) {
      return label;
 }
 
-function createMenuScreens(className, id) {
-    menuDiv = document.createElement('div');
+function createMenuDiv(className, id) {
+    const menuDiv = document.createElement('div');
     menuDiv.setAttribute('id', id);
-    menuDiv.classList.add(className);
+    menuDiv.setAttribute('class', className);
+    const menuHeading = document.createElement('h3');
+    menuDiv.appendChild(menuHeading);
+
     return menuDiv;
 }
 
@@ -47,9 +50,9 @@ function createNavAndMenus(className) {
     const menuLabel = createLabel('menu', 'Menu');
     const contactUsLabel = createLabel('contact-us', 'Contact Us');
 
-    const homeMenu = createMenuScreens('tab', 'homeMenu')
-    const menuMenu = createMenuScreens('tab', 'menuMenu')
-    const contactUsMenu = createMenuScreens('tab', 'contactUsMenu')
+    const homeMenu = createMenuDiv('tab', 'homeMenu');
+    const menuMenu = createMenuDiv('tab', 'menuMenu');
+    const contactUsMenu = createMenuDiv('tab', 'contactUsMenu');
 
     nav.appendChild(homeLink);
     nav.appendChild(homeLabel);
@@ -66,15 +69,10 @@ function createNavAndMenus(className) {
     return nav;
 }
 
-function createMain(id) {
-    const main = document.createElement('main');
-    main.setAttribute('id', id);
-    return main;
-}
-
 function createFooter(id) {
     const footer = document.createElement('footer');
     footer.setAttribute('id', id);
+    
     return footer;
 }
 
@@ -85,9 +83,6 @@ function pageLoad() {
     const navBar = createNavAndMenus('tabs');
     header.appendChild(navBar);
     content.appendChild(header);
-    //main
-    const main = createMain('main');
-    content.appendChild(main);
     //footer
     const footer = createFooter('footer');
     content.appendChild(footer);
