@@ -6,11 +6,22 @@ function createTextDiv(id) {
 }
 
 function createHomePageHeading(id) {
+    const headingDiv = document.createElement('div');
+    headingDiv.className = "heading-div";
+    
     const heading = document.createElement('h2');
-    heading.innerText = "This is The Pizza Bar"
+    heading.innerText = "This is "; 
     heading.setAttribute('id', id);
     heading.setAttribute('class', 'heading');
-    return heading;
+
+    const niceUnderline = document.createElement('span');
+    niceUnderline.className = "underline--magical";
+    niceUnderline.textContent = "The Pizza Bar";
+
+    headingDiv.appendChild(heading);
+    headingDiv.appendChild(niceUnderline);    
+
+    return headingDiv;
 }
 
 function createCopyContent(id) {
@@ -28,44 +39,50 @@ function addImagesToHome(className) {
     imgDiv.setAttribute('class', 'images');
 
     const imgOne = document.createElement('img');
-    const imgTwo = document.createElement('img');
-    const imgThree = document.createElement('img');
 
     imgOne.setAttribute('class', className);
-    imgOne.setAttribute('id', 'pizza');
+    imgOne.setAttribute('id', 'images');
 
-    imgTwo.setAttribute('class', className);
-    imgTwo.setAttribute('id', 'chef');
-
-    imgThree.setAttribute('class', className);
-    imgThree.setAttribute('id', 'drink');
-
-    imgOne.src = '../dist/imgs/rustic-pizza.jpeg';
-    imgTwo.src = '../dist/imgs/chef.jpeg';
-    imgThree.src = '../dist/imgs/drink.jpeg';
+    imgOne.src = '../dist/imgs/combined-images.svg';
 
     imgDiv.appendChild(imgOne);
-    imgDiv.appendChild(imgTwo);
-    imgDiv.appendChild(imgThree);
-
+   
     return imgDiv;
 }
 
+function addReservationButton(className) {
+    const reservationButton = document.createElement('button');
+    reservationButton.className = className;
+    reservationButton.innerHTML = "Make a Reservation";
+    reservationButton.id = "reservation-button"
+    return reservationButton;
+}
 
 function loadHome() {
+    // Close and clear other menus
+    const menuMenu = document.getElementById('menuMenu');
+    const contactMenu = document.getElementById('contactUsMenu');
+    menuMenu.innerHTML = "";
+    contactMenu.innerHTML = "";
+    menuMenu.style.display = 'none';
+    contactMenu.style.display = 'none';
+    
+    // open and clear this tab
     const openTab = document.getElementById('homeMenu');
+    openTab.innerHTML = "";
+    openTab.style.display = 'flex';
 
     const textDiv = createTextDiv('home-text-box');  
     const copy = createCopyContent('home-copy');
     const heading = createHomePageHeading('home-heading');
     const imgs = addImagesToHome('home-img');
+    const button = addReservationButton('reservation');
 
     textDiv.appendChild(heading);
     textDiv.appendChild(copy);
+    textDiv.appendChild(button);
     openTab.appendChild(imgs);
     openTab.appendChild(textDiv);
-
-    openTab.style.display = 'flex';
 }
 
 export default loadHome;

@@ -47,8 +47,11 @@ function createNavAndMenus(className) {
     const contactUsLink = createNavRadio('contact-us', 'Contact Us');
 
     const homeLabel = createLabel('home', 'Home');
+    homeLabel.id = 'home-tab';
     const menuLabel = createLabel('menu', 'Menu');
+    menuLabel.id = 'menu-tab';
     const contactUsLabel = createLabel('contact-us', 'Contact Us');
+    contactUsLabel.id = 'contact-tab';
 
     const homeMenu = createMenuDiv('tab', 'homeMenu');
     const menuMenu = createMenuDiv('tab', 'menuMenu');

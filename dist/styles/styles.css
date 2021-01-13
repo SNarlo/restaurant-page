@@ -14,7 +14,8 @@
 }
 
 :root {
-    --background-img: url('../imgs/simple-hexagonal-pattern.jpg');
+    --home-background-img: url('../imgs/simple-hexagonal-pattern.jpg');
+    --menu-background-img: url('../imgs/cool-geometric-patten.jpg')
 }
 
 
@@ -86,9 +87,9 @@
     color: black;   
 }
 
-.tab::before {
+#homeMenu::before {
     content: '';
-    background-image: var(--background-img);
+    background-image: var(--home-background-img);
     background-repeat: no-repeat;
     opacity: 0.25;
     position: absolute;
@@ -97,6 +98,8 @@
     right: 0;
     bottom: 0;
 }
+
+/* Home Tab */
 
 #home-text-box {
     text-align: center;
@@ -113,8 +116,16 @@
 }
 
 .home-img {
-    height: 40px;
-    width: 40px;
+    margin-top: 10%;
+    height: 600px;
+    width: 600px;
+}
+
+.heading-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: xxx-large;
 }
 
 .images {
@@ -125,7 +136,67 @@
     height: 600px;
     justify-content: center;
     align-items: center;
-    border: 1px solid black;
 }
 
-/* Need to add transitions to screens */ 
+.underline--magical {
+  background-image: linear-gradient(13deg, rgba(255,255,255,1) 0%, rgb(133, 184, 163) 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 0.2em;
+  background-position: 0 88%;
+  transition: background-size 0.25s ease-in;
+  margin-left: 10px;
+}
+
+.underline--magical::before {
+    background-size: 100% 88%;
+}
+
+#reservation-button {
+    margin-top: 2em;
+    border-radius: 0;
+    background-color: white;
+    font-family: neue-titles;
+    font-size: 22px;
+    padding: 10px;
+    font-weight: 400;
+    box-shadow: 5px 5px rgb(133, 184, 163);
+    outline: none;
+    cursor: pointer;
+    border: 2px solid black;
+}
+
+#reservation-button:hover {
+    box-shadow: 5px 5px black;
+}
+
+
+/* Need to add transitions to screens using keyframes*/ 
+
+/* Menu Tab */
+
+#menuMenu::before {
+    content: '';
+    background-image: var(--menu-background-img);
+    background-repeat: no-repeat;
+    opacity: 0.25;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.menu-parent {
+    display: flex;
+    flex-direction: row;
+    width: inherit;
+    border: 1px solid greenyellow;
+}
+
+.menu-columns {
+    border: 1px solid red;
+    width: inherit;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
