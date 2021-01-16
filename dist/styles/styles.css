@@ -15,8 +15,8 @@
 
 :root {
     --home-background-img: url('../imgs/simple-hexagonal-pattern.jpg');
-    /* --menu-background-img: url('../imgs/hexagon-pattern.jpg') */
-    --menu-background-img: url('../imgs/triangle-grid.svg')
+    --menu-background-img: url('../imgs/triangle-grid.svg');
+    --menu-background-pattern: url('../imgs/menu-pattern.svg');
 }
 
 
@@ -186,17 +186,24 @@
     left: 0;
     right: 0;
     bottom: 70px;
+    z-index: -1;
 }
 
 .menu-parent {
     display: flex;
     flex-direction: row;
     width: inherit;
+    padding-left: 150px;
+    padding-right: 150px;
 }
 
 .menu-columns {
     width: inherit;
-    margin-left: 100px;
-    margin-right: 100px;
+    background-color: whitesmoke;
+    opacity: 0.9;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    z-index: 1;
 }
+
 

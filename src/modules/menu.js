@@ -4,8 +4,10 @@ function createGridLayout(className) {
 
     const columnOne = document.createElement('div');
     columnOne.className = className;
+    columnOne.id = "one";
     const columnTwo = document.createElement('div');
     columnTwo.className = className;
+    columnTwo.id = "two";
     parentDiv.appendChild(columnOne);
     parentDiv.appendChild(columnTwo);
 
