@@ -1,16 +1,14 @@
-function createGridLayout(className) {
+
+
+function createMenu(className) {
     const parentDiv = document.createElement('div');
     parentDiv.className = "menu-parent";
 
-    const columnOne = document.createElement('div');
-    columnOne.className = className;
-    columnOne.id = "one";
-    const columnTwo = document.createElement('div');
-    columnTwo.className = className;
-    columnTwo.id = "two";
-    parentDiv.appendChild(columnOne);
-    parentDiv.appendChild(columnTwo);
+    const menu = document.createElement('img');
+    menu.className = className;
+    menu.src = '../imgs/Menu-Desktop.svg';
 
+    parentDiv.appendChild(menu);
     return parentDiv;
 }
 
@@ -27,7 +25,7 @@ function loadMenu() {
     menuTab.innerHTML = "";
     menuTab.style.display = 'flex';
 
-    const menuGrid = createGridLayout('menu-columns');
+    const menuGrid = createMenu('menu-img');
     menuTab.appendChild(menuGrid);
 }
 
