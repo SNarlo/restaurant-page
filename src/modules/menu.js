@@ -6,7 +6,7 @@ function createMenu(className) {
 
     const menu = document.createElement('img');
     menu.className = className;
-    menu.src = '../imgs/Menu-Desktop.svg';
+    menu.src = '../dist/imgs/Menu-Desktop.svg';
 
     parentDiv.appendChild(menu);
     return parentDiv;

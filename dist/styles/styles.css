@@ -148,7 +148,7 @@
   margin-left: 10px;
 }
 
-.underline--magical::before {
+.underline--magical:hover {
     background-size: 100% 88%;
 }
 
@@ -156,7 +156,7 @@
     margin-top: 2em;
     border-radius: 0;
     background-color: white;
-    font-family: neue-titles;
+    font-family: neue-body;
     font-size: 22px;
     padding: 10px;
     font-weight: 400;
@@ -174,6 +174,16 @@
 /* Need to add transitions to screens using keyframes*/ 
 
 /* Menu Tab */
+
+.menu-parent {
+    height: inherit;
+    width: inherit;
+}
+
+.menu-img {
+    height: inherit;
+    width: inherit;
+}
 
 
 
