@@ -4,12 +4,23 @@ function createContactCopy() {
     copyTextDiv.setAttribute('id', 'contact-copy-div');
 
     const contactUsHeading = document.createElement('h1');
-    const copyText = document.createElement('p');
+    contactUsHeading.textContent = "Find Us Here"
     contactUsHeading.setAttribute('id', 'contact-us-heading')
-    copyText.setAttribute('id', 'contact-us-text')
+    const days = document.createElement('p');
+    const hours = document.createElement('p');
+    const address = document.createElement('p');
+    days.setAttribute('id', 'days')
+    hours.setAttribute('id', 'hours');
+    address.setAttribute('id', 'address');
+    days.textContent = "Monday - Sunday";
+    hours.textContent = "Lunch: 10am - 4pm  |  Dinner: 6pm - 11pm"
+    address.textContent = "123 Fake St, Fake York City"
 
     copyTextDiv.appendChild(contactUsHeading);
-    copyTextDiv.appendChild(copyText);
+    copyTextDiv.appendChild(days);
+    copyTextDiv.appendChild(hours);
+    copyTextDiv.appendChild(address);
+
 
     return copyTextDiv;
 }
@@ -17,8 +28,9 @@ function createContactCopy() {
 function addImage() {
     const contactUsImg = document.createElement('img');
     contactUsImg.setAttribute('id', 'contact-img');
-    contactUsImg.src = '..dist/imgs/rooftop-bar.jpg';
+    contactUsImg.src = '../dist/imgs/rooftop-bar.jpg';
 
+    return contactUsImg;
 }
 
 function loadContactPage() {

@@ -17,6 +17,7 @@
     --home-background-img: url('../imgs/simple-hexagonal-pattern.jpg');
     --menu-background-img: url('../imgs/triangle-grid.svg');
     --menu-background-pattern: url('../imgs/menu-pattern.svg');
+    --paper-texture: url('../imgs/paper-texture.jpg');
 }
 
 
@@ -91,7 +92,7 @@
 #homeMenu::before {
     content: '';
     background-image: var(--home-background-img);
-    background-repeat: no-repeat;
+    background-repeat: repeat-y;
     opacity: 0.25;
     position: absolute;
     top: 0;
@@ -186,5 +187,70 @@
 }
 
 
+/* Contact Us Page */
+
+#contactUsMenu::before {
+    content: '';
+    background-image: var(--home-background-img);
+    background-repeat: repeat-y;
+    opacity: 0.25;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+}
+
+
+#contact-copy-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 22%;
+    right: 5%;
+    height: 40vh;
+    width: 33vw;;
+    box-shadow: 0px 0px 80px  rgba(96, 145, 124, 0.4);
+    padding-bottom: 40px;
+    padding-top: 30px;
+    z-index: 1;
+}
+
+#contact-copy-div::before {
+    content: '';
+    background-image: var(--paper-texture);
+    background-repeat: repeat-y;
+    opacity: 0.3;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+}
+
+#bar-img {
+    position: relative;
+    left: 15%;
+    top: 15%;
+    height: 500px;
+    width: 350px;
+}
+
+#contact-us-heading {
+    font-family: neue-titles;
+    font-size: 45px;
+    z-index: 2;
+}
+
+#days, #hours, #address {
+    margin-top: 3em;
+    font-family: 'neue-body';
+    font-size: 20px;
+    z-index: 2;
+}
 
 
