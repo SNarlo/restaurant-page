@@ -2,6 +2,7 @@
 function createContactCopy() {
     const copyTextDiv = document.createElement('div');
     copyTextDiv.setAttribute('id', 'contact-copy-div');
+    copyTextDiv.setAttribute('class', 'fade-in-right');
 
     const contactUsHeading = document.createElement('h1');
     contactUsHeading.textContent = "Find Us Here"
@@ -28,7 +29,7 @@ function createContactCopy() {
 function addImage() {
     const contactUsImg = document.createElement('img');
     contactUsImg.setAttribute('id', 'contact-img');
-    contactUsImg.src = '../dist/imgs/rooftop-bar.jpg';
+    contactUsImg.src = '../dist/imgs/contact-us-img.png';
 
     return contactUsImg;
 }
@@ -52,6 +53,12 @@ function loadContactPage() {
     const rooftopBarImg = addImage();
     rooftopBarImg.setAttribute('id', 'bar-img');
     contactUsTab.appendChild(rooftopBarImg);
+
+    const mobileImg = document.createElement('img');
+    mobileImg.setAttribute('id', 'mobile-img');
+    mobileImg.src = '../dist/imgs/rooftop-bar.jpg';
+
+    contactUsTab.appendChild(mobileImg);
 }
 
 export default loadContactPage;

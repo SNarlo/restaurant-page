@@ -4,6 +4,7 @@ function createHeader(id) {
 
     const logo = document.createElement('img');
     logo.setAttribute('id', 'logo');
+    logo.src = '../dist/imgs/pizza-bar-logo.svg';
     header.appendChild(logo);
     
     return header;

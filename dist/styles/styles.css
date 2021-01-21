@@ -33,7 +33,7 @@
     position: relative;
     top: 0;
     left: 0;
-    height: 120px;
+    height: 15vh;
     width: 100%;
     background-color: black;
 }
@@ -41,6 +41,14 @@
 .heading {
     font-family: neue-headers;
     font-size: xxx-large;
+}
+
+#logo {
+    position: absolute;
+    height: 100%;
+    width: 15%;
+    top: 0;
+    left: 5%;
 }
 
 .tabs {
@@ -82,23 +90,26 @@
 .tab {
     position: absolute;
     display: none;
-    top: 120px;
+    top: 15vh;
     left: 0;
-    height: 668px;
-    width: 100%;
+    right: 0;
+    bottom: 0;
+    height: 85vh;
+    width: 100vw;
     color: black;   
 }
 
 #homeMenu::before {
     content: '';
     background-image: var(--home-background-img);
-    background-repeat: repeat-y;
+    background-repeat: repeat;
     opacity: 0.25;
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
+    width: 50%;
 }
 
 /* Home Tab */
@@ -106,21 +117,20 @@
 #home-text-box {
     text-align: center;
     position: absolute;
-    right: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    right: 0;
     top: 20%;
-    width: 450px;
+    width: 50%;
     line-height: 2.5em;
-    padding: 20px;
 }
 
 #home-copy {
     margin-top: 5em;
-}
-
-.home-img {
-    margin-top: 10%;
-    height: 600px;
-    width: 600px;
+    width: auto;
+    max-width: 450px;
 }
 
 .heading-div {
@@ -130,12 +140,13 @@
     font-size: xxx-large;
 }
 
-.images {
+#images {
     display: flex;
     position: absolute;
-    left: 5%;
-    width: 600px;
-    height: 600px;
+    top: 8%;
+    left: 2%;
+    width: 50vw;
+    height: 70vh;
     justify-content: center;
     align-items: center;
 }
@@ -165,6 +176,7 @@
     outline: none;
     cursor: pointer;
     border: 2px solid black;
+    width: 30%;
 }
 
 #reservation-button:hover {
@@ -179,11 +191,18 @@
 .menu-parent {
     height: inherit;
     width: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .menu-img {
     height: inherit;
     width: inherit;
+}
+
+.mobile-menu {
+    display: none;
 }
 
 
@@ -192,7 +211,7 @@
 #contactUsMenu::before {
     content: '';
     background-image: var(--home-background-img);
-    background-repeat: repeat-y;
+    background-repeat: repeat;
     opacity: 0.25;
     position: absolute;
     top: 0;
@@ -200,6 +219,8 @@
     right: 0;
     bottom: 0;
     height: 100%;
+    width: 50%;
+    
 }
 
 
@@ -213,17 +234,41 @@
     right: 5%;
     height: 40vh;
     width: 33vw;;
-    box-shadow: 0px 0px 80px  rgba(96, 145, 124, 0.4);
+    box-shadow: 0px 0px 80px rgba(96, 145, 124, 0.4);
     padding-bottom: 40px;
     padding-top: 30px;
     z-index: 1;
+    -webkit-animation-duration:1s;
+    animation-duration:1s;
+    -webkit-animation-fill-mode:both;
+    animation-fill-mode:both;
+}
+
+.fade-in-right {
+    -webkit-animation: fade-in-right;
+    animation-name: fade-in-right;
+}
+
+@keyframes fade-in-right{
+    0%{
+        opacity:0;
+        -webkit-transform:translateX(5%);
+        -ms-transform:translateX(5%);
+        transform:translateX(5%)
+    }
+    100%{
+        opacity:1;
+        -webkit-transform:translateX(0);
+        -ms-transform:translateX(0);
+        transform:translateX(0);
+    }
 }
 
 #contact-copy-div::before {
     content: '';
     background-image: var(--paper-texture);
     background-repeat: repeat-y;
-    opacity: 0.3;
+    opacity: 0.5;
     position: absolute;
     top: 0;
     left: 0;
@@ -234,10 +279,10 @@
 
 #bar-img {
     position: relative;
-    left: 15%;
-    top: 15%;
-    height: 500px;
-    width: 350px;
+    left: 8%;
+    top: 8%;
+    height: 90%;
+    width: 35%;
 }
 
 #contact-us-heading {
@@ -253,4 +298,128 @@
     z-index: 2;
 }
 
+#mobile-img {
+    display: none;
+}
 
+
+/* Media Queries */
+
+@media screen and (max-width: 900px) {
+    .tabs .tabs label {
+        order: initial;
+    }
+
+    #header {
+        background-color: white;
+    }
+
+    .tabs label {
+        width: 100%;
+        margin-right: 0;
+        margin-top: 0;
+        border-top: 2px solid black;
+    }
+
+    #contact-tab {
+        border-bottom: 2px solid black;
+    }
+
+    .tab {
+        position: absolute;
+        top: 23vh;
+    }
+
+    #homeMenu {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #home-text-box {
+        position: initial;
+        width: 100%;
+        margin-top: 0;
+
+    }
+
+    .heading-div{
+        font-size: xx-large;
+    }
+
+    #home-copy {
+        margin-top: 2.5em;
+        padding: 0% 5%;
+    }
+
+    #reservation-button {
+        width: 60%;
+    }
+
+    #homeMenu::before {
+        content: '';
+        background-image: var(--home-background-img);
+        background-repeat: repeat;
+        opacity: 0.15;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+    }
+
+    #images {
+        display: none;
+    }
+
+    .menu-parent {
+        display: none;
+    }
+
+    .mobile-menu {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: 0 10vw;
+    }
+
+    #contactUsMenu::before {
+        display: none;
+    }
+
+    #bar-img {
+        display: none;
+    }
+
+    #mobile-img {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    #contact-copy-div {
+        position: absolute;
+        width: 80vw;
+        left: 10%;
+        right: 10%;
+        text-emphasis: bold;
+    }
+
+    #contact-copy-div::before {
+        content: '';
+        background-image: var(--paper-texture);
+        background-repeat: repeat-y;
+        opacity: 1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 0;
+    }
+
+}
