@@ -11,6 +11,7 @@ function init() {
 
     const homeButton = document.getElementById('home-tab');
     homeButton.addEventListener('click', loadHome);
+    
 
     const menuButton = document.getElementById('menu-tab');
     menuButton.addEventListener('click', loadMenu);

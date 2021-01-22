@@ -78,9 +78,8 @@
     transition: background ease 0.2s;
 }
 
-.tabs label:hover {
-    color: black;
-    background-color: gainsboro;
+label:hover {
+    color: rgb(133, 184, 163);
 }
 
 .tabs input[type="radio"] {
@@ -125,6 +124,11 @@
     top: 20%;
     width: 50%;
     line-height: 2.5em;
+    -webkit-animation-duration:3s;
+    animation-duration:3s;
+    --webkit-animation: fade-in;
+    animation-name: fade-in;
+    animation-fill-mode: both;
 }
 
 #home-copy {
@@ -149,6 +153,26 @@
     height: 70vh;
     justify-content: center;
     align-items: center;
+    -webkit-animation-duration:2s;
+    animation-duration:2s;
+    --webkit-animation: fade-in-top;
+    animation-name: fade-in-top;
+    animation-fill-mode: both;
+}
+
+@keyframes fade-in-top{
+    0%{
+        opacity:0;
+        -webkit-transform:translateY(0);
+        -ms-transform:translateY(0);
+        transform:translateY(0)
+    }
+    100%{
+        opacity:1;
+        -webkit-transform:translateY(6%);
+        -ms-transform:translateY(6%);
+        transform:translateY(6%);
+    }
 }
 
 .underline--magical {
@@ -158,10 +182,6 @@
   background-position: 0 88%;
   transition: background-size 0.25s ease-in;
   margin-left: 10px;
-}
-
-.underline--magical:hover {
-    background-size: 100% 88%;
 }
 
 #reservation-button {
@@ -199,7 +219,21 @@
 .menu-img {
     height: inherit;
     width: inherit;
+    -webkit-animation-duration:1.5s;
+    animation-duration:1.5s;
+    --webkit-animation: fade-in;
+    animation-name: fade-in;
 }
+
+@keyframes fade-in{
+    0%{
+        opacity:0;
+    }
+    100%{
+        opacity:1;
+    }
+}
+
 
 .mobile-menu {
     display: none;
@@ -245,7 +279,7 @@
 }
 
 .fade-in-right {
-    -webkit-animation: fade-in-right;
+    --webkit-animation: fade-in-right;
     animation-name: fade-in-right;
 }
 
@@ -283,6 +317,26 @@
     top: 8%;
     height: 90%;
     width: 35%;
+    -webkit-animation-duration:1s;
+    animation-duration:1s;
+    -webkit-animation-fill-mode:both;
+    animation-fill-mode: both;
+    animation-name: fade-in-left;
+}
+
+@keyframes fade-in-left{
+    0% {
+        opacity:0;
+        -webkit-transform:translateX(0%);
+        -ms-transform:translateX(0%);
+        transform:translateX(0%);
+    }
+    100% {
+        opacity:1;
+        -webkit-transform:translateX(6%);
+        -ms-transform:translateX(6%);
+        transform:translateX(6%);
+    }
 }
 
 #contact-us-heading {

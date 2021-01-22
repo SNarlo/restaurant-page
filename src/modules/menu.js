@@ -5,7 +5,7 @@ function createMenu(className) {
     parentDiv.className = "menu-parent";
 
     const menu = document.createElement('img');
-    menu.className = className;
+    menu.setAttribute('class', className);
     menu.src = '../dist/imgs/Menu-Desktop.svg';
 
     parentDiv.appendChild(menu);
@@ -51,7 +51,7 @@ function loadMenu() {
     //normal menu
     const menuGrid = createMenu('menu-img');
     menuTab.appendChild(menuGrid);
-    
+
     //mobile menus
     const mobileMenus = createMobileMenu();
     menuTab.appendChild(mobileMenus);
